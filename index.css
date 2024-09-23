@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&family=Reddit+Mono:wght@200..900&family=Roboto&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Rubik", sans-serif;
+    font-weight: 400;
+}
+
+:root {
+
+    --bg-color: #0C0C0C;
+    --main-color: #FF8225;
+    --text-color: #F5F7F8;
+
+    --big-font: 2.7rem;
+    --p-font: .95rem;
+    --icon-font: 1rem;
+    --menu-icon-font: 1.5rem;
+}
+
+body {
+    background: var(--bg-color);
+}
+
+.header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 5vw;
+    padding: 4rem 15%;
+    transition: .50s ease;
+    background: var(--bg-color);
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--text-color);
+    font-size: var(--big-font);
+    font-weight: 600;
+    transition: .20s;
+}
+
+.logo span {
+    color: var(--main-color);
+    font-weight: 600;
+    transition: .8s;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.2rem;
+    gap: 45px;
+    transition: .45s ease;
+}
+
+.navbar ul li a {
+    position: relative;
+    display: block;
+    color: var(--text-color);
+    font-size: var(--p-font);
+    transition: .8s;
+    cursor: pointer;
+}
+
+.navbar ul li a::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    content: '';
+    width: 100%;
+    background: var(--main-color);
+    height: 3px;
+    transition: transform .8s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+
+.navbar ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+} 
+
+#menu-icon {
+    display: none;
+    color: var(--text-color);
+    font-size: var(--p-font);
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    padding: 10rem 15%;
+    color: var(--text-color);
+}
+
+.home-text {
+    margin-top: 6rem;
+}
+
+.home-text h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: .6rem;
+}
+
+.home-text .text-animation {
+    font-size: 3.5rem;
+    font-weight: 550;
+    margin-bottom: .5rem;
+}
+
+.home-text .text-animation span {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.home-text .text-animation span::before {
+    content: 'Full Stack Developer';
+    color: var(--main-color);
+    animation:  words 20s infinite;
+}
+
+.home-text .text-animation span::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 15px);
+    height: 180%;
+    background-color: var(--bg-color);
+    border-left: 2px solid var(--main-color);
+    right: -10px;
+    animation:  cursor .8s infinite,typing 20s steps(14) infinite;
+}
+
+.link-contant {
+    margin: 1rem -.10rem;
+}
+
+.link-contant a {
+    padding: 6px 8px;
+    border: 2px solid var(--text-color);
+    border-radius: 100px;
+    font-size: var(--icon-font);
+    color: var(--text-color);
+    margin-left: 8px;
+    transition: .5s;
+}
+
+.link-contant a:hover {
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+}
+
+.downloadCV {
+    position: relative;
+    top: 1.5rem;
+    left: .7rem;
+    background: transparent;
+    padding: 10px 15px;
+    border: 2px solid var(--main-color);
+    color: var(--main-color);
+    transition: .5s;
+    font-size: var(--p-font);
+}
+
+.downloadCV:hover {
+    border: 2px solid var(--bg-color);
+    color: var(--bg-color);
+    background: var(--main-color);
+}
+
+.home-img img {
+    position: relative;
+    top: -6rem;
+    width: 500px;
+    z-index: -1000;
+}
+
+/* strat media screen */
+
+@media (max-width: 1580px) {
+
+    :root {
+        --icon-font: .8rem;
+    }
+
+    .header {
+        padding: 3.5rem 15%;
+    }
+
+    .home-text h1 {
+        font-size: 4rem;
+        margin-bottom: 4px;
+    }
+    
+    .home-text .text-animation {
+        font-size: 2.5rem;
+    }
+    
+    .home-text .text-animation span {
+        font-size: 2rem;
+    }
+
+    .home-text .text-animation span::after {
+        height: 120%;
+    }
+
+    .link-contant {
+        margin-bottom: 4px;
+    }
+}
+
+@media (max-width: 1380px) {
+
+    :root {
+        --big-font: 2.5rem;
+        --p-font: .8rem;
+        --icon-fon: .5rem;
+    }
+    
+    .header {
+        padding: 3.2rem 14%;
+    }
+
+    .home {
+        padding: 10rem 14%;
+    }
+
+    .home-text {
+        margin-top: 6rem;
+    }
+
+    .home-text h1 {
+        font-size: 3rem;
+        margin-bottom: 4px;
+    }
+    
+    .home-text .text-animation {
+        font-size: 2rem;
+    }
+    
+    .home-text .text-animation span {
+        font-size: 1.5rem;
+    }
+
+    .home-text .text-animation span::after {
+        height: 120%;
+    }
+
+    .link-contant {
+        margin-bottom: 4px;
+    }
+
+    .home-img img {
+        width: 450px;
+    }
+}
+
+@media (max-width: 1180px)  {
+
+    .home-text {
+        margin-top: 5rem;
+    }
+    
+    .home-img img {
+        width: 400px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    :root {
+        --p-font: 12px;
+        --icon-fon: 10px;
+    }
+
+    .header {
+        padding: 3.2rem 13%;
+    }
+    .home {
+        padding: 10rem 13%;
+    }
+
+    .home-text {
+        margin-top: 3.5rem;
+    }
+
+    .home-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 2px;
+    }
+    
+    .home-text .text-animation {
+        font-size: 1.6rem;
+    }
+    
+    .home-text .text-animation span {
+        font-size: 1.5rem;
+    }
+
+    .home-text .text-animation span::after {
+        height: 100%;
+    }
+
+    .link-contant {
+        margin-bottom: 4px;
+    }
+
+    .home-img img {
+        width: 350px;
+    }
+}
+
+@media (max-width: 894px) {
+
+    :root {
+        --p-font: 1rem;
+        --icon-fon: 1rem;
+    }
+
+    #menu-icon  {
+        display: block;
+        overflow: hidden;
+        font-size: 1.2rem;
+        z-index: 10;
+    }
+
+    .header {
+        padding: 3rem 12%;
+        max-height: 40vw;
+    }
+
+    .navbar {
+        position: absolute;
+        width: 0;
+        left: 0;
+        top: 0;
+        background-color: #3b3b3b;
+        transition: .5s;
+    }
+
+    .navbar.active {
+        width: 100%;
+    }
+
+    .navbar ul {
+        display: inline-block;
+        padding: 4.5rem 8%;
+        opacity: 0;
+    }
+
+    .navbar.active ul {
+        opacity: 1;
+    }
+
+    .navbar ul li {
+        margin-bottom: 20px;
+
+    }
+    .home {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .home-text {
+        margin-top: -8rem;
+        width: 100%;
+        order: 2;
+        margin-left: 7rem;
+    }
+
+    .home-text h1 {
+        font-size: 3rem;
+        margin-bottom: 3px;
+    }
+    
+    .home-text .text-animation {
+        font-size: 2rem;
+    }
+    
+    .home-text .text-animation span {
+        font-size: 1.5rem;
+    }
+
+    .home-text .text-animation span::after {
+        height: 130%;
+    }
+
+    .link-contant {
+        margin-bottom: 10px;
+    }
+
+    .home-img img {
+        width: 400px;
+    }
+
+}
+
+@media (max-width: 680px) {
+    .home-text {
+        margin-left: 5rem;
+    }
+}
+
+@media (max-width: 600px) {
+
+    :root {
+        --big-font: 2rem;
+        --p-font: .8rem;
+    }
+
+    .header {
+        max-height: 20vw;
+    }
+
+    #menu-icon  {
+        font-size: 1.2rem;
+    }
+
+    .navbar ul {
+        padding: 2rem 5%;
+    }
+
+    .home-text {
+        margin-top: -9rem;
+        margin-left: 3.5rem;
+    }
+}
+
+@media (max-width: 550px) {
+
+    :root {
+        --big-font: 1.8rem;
+        --p-font: 15px;
+        --icon-font:15px;
+    }
+
+    #menu-icon  {
+        font-size: 1rem;
+    }
+
+    .home-text {
+        margin-top: -7rem;
+        margin-left: 3.8rem;
+    }
+
+    .home-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .home-text .text-animation {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    
+    .home-text .text-animation span {
+        font-size: 1rem;
+    }
+
+    .home-text .text-animation span::after {
+        height: 140%;
+    }
+
+    .link-contant {
+        margin-bottom: 10px;
+    }
+
+    .home-img img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 450px) {
+    .home-img img {
+        width: 280px;
+    }
+
+    .home-text {
+        margin-top: -8rem;
+        margin-left: 3.5rem;
+    }
+}
+
+
+/* animation */
+@keyframes cursor {
+    to {
+        border-left: 2px solid var(--bg-color);
+    }
+}
+
+@keyframes words {
+    0%,20% {
+        content: 'Full Stack Developer';
+    }
+    21%,40% {
+        content: 'Web Developer';
+    }
+    41%,60% {
+        content: 'Full Stack Developer';
+    }
+    61%,80% {
+        content: 'Web Developer';
+    }
+    81%,100% {
+        content: 'Full Stack Developer';
+    }
+}
+
+@keyframes typing {
+    10%,15%,20%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 10px);
+    }
+}
+
+
+
